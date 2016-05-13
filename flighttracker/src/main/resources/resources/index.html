@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<script src="js/angular.js"></script>
+<script src="js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/theme.css">
+</head>
+<body ng-controller="myController">
+
+	<button type="button" ng-click="getFlight()">Retrive Flights</button>
+	<div >
+
+		<table id="flights" >
+			<thead>
+				<tr>
+					<th>Flight Prefix</th>
+					<th>Flight Number</th>
+				</tr>
+			</thead>
+			<tbody ng-repeat="flight in flights">
+				<tr>
+					<td>{{flight.flightPrefix}}</td>
+					<td>{{flight.flightNumber}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+
+</body>
+</html>
