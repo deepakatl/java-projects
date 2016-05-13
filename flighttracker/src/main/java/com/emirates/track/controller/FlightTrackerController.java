@@ -14,14 +14,15 @@ import com.emirates.track.service.ServiceFactory;
 @RestController
 public class FlightTrackerController {
 
+	List<FlightDTO> flightList = new ArrayList<FlightDTO>();
 	@RequestMapping("/flight")
 	public List<FlightDTO> getFlight(){
-		List<FlightDTO> flightList = new ArrayList<FlightDTO>();
-		flightList.add(new FlightDTO("EK", "0522"));
+		
+		/*flightList.add(new FlightDTO("EK", "0522"));
 		flightList.add(new FlightDTO("EK", "0456"));
 		flightList.add(new FlightDTO("EK", "0458"));
 		flightList.add(new FlightDTO("EK", "0458"));
-		flightList.add(new FlightDTO("EK", "0458"));
+		flightList.add(new FlightDTO("EK", "0458"));*/
 		FlightService flightService =ServiceFactory.getFlightService();
 		FlightDTO flightDTO = flightService.getFlightInfo();
 		flightList.add(flightDTO);
