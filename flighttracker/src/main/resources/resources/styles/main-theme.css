@@ -1,0 +1,35 @@
+.top {
+        position:absolute;
+        left:0; right:0;
+        height: 92px;
+    }
+    .left {
+        position:absolute;
+        left:0; top:99px; bottom: 0;
+        width: 178px;
+    }
+    .main {
+        position: absolute;
+        left:178px; top:99px; right:0; bottom:0;
+    }
+
+.top { background: blue; }
+.left { background: red; }
+.main { background: yellow; }
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#gmaps {
+    width: 750px;
+    height: 950px;
+}
+

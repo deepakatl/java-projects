@@ -1,0 +1,16 @@
+<table ng-table="tableParams" class="table" show-filter="false">
+	<thead>
+		<tr>
+			<th>Flight Prefix</th>
+			<th>Flight Number</th>
+		</tr>
+	</thead>
+	<tbody ng-repeat="flight in flights">
+		<tr>
+			<td title="'Prefix'" filter="{ flightPrefix: 'text'}">
+				{{flight.flightPrefix}}</td>
+			<td title="'Number'" filter="{ flightNumber: 'text'}">
+				{{flight.flightNumber}}</td>
+		</tr>
+	</tbody>
+</table>

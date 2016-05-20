@@ -1,0 +1,16 @@
+<table id="flights">
+	<thead>
+		<tr>
+			<th>Flight Prefix</th>
+			<th>Flight Number</th>
+		</tr>
+	</thead>
+	<tbody ng-repeat="flight in flights">
+		<tr>
+			<td><input name="flightPrefix" ng-model="flight.flightPrefix"><br></td>
+			<td><input name="flightNumber" ng-model="flight.flightNumber"><br></td>
+		</tr>
+	</tbody>
+</table>
+<button type="button" ng-click="createFlights()">Create Flights</button>
+<button type="button" ng-click="addRow()">Add Flight Row</button>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+<script src="js/angular.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/event.js"></script>
+<script src="js/google.maps.js"></script>
+<script src="js/ui-map.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/theme.css">
+<link rel="stylesheet" type="text/css" href="styles/main-theme.css">
+</head>
+<body ng-controller="myController">
+	<div class="top">TOP</div>
+	<div class="left">
+
+		<button type="button" class="button" ng-click="showCreatePage()">Create
+			Flights</button>
+		<br />
+		<button type="button" class="button" ng-click="showSearchPage()">Search
+			Flights</button>
+		<button type="button" class="button" ng-click="deleteAll()">Delete All Flights</button>
+		<button type="button" class="button" ng-click="showMap()">Show Map</button>
+	</div>
+	<div class="main" ng-include src="template.url"></div>
+
+</body>
+</html>
