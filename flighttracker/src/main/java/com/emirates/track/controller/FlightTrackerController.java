@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.emirates.track.dto.FlightDTO;
 import com.emirates.track.service.FlightService;
-
+/**
+ * Flight tracking controller file for Spring Boot MVC
+ *  
+ */
 @RestController
 public class FlightTrackerController {
 
