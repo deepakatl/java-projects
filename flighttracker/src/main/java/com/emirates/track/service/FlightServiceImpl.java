@@ -36,18 +36,25 @@ public class FlightServiceImpl implements FlightService{
 	}
 
 	@Override
-	public void deleteAll() {
-		flightDAO.deleteAll();
+	public boolean deleteAll() {
+		boolean successFlag = false;
+		int success = flightDAO.deleteAll();
+		if(success == 1){
+			successFlag = true;
+		}
+		return successFlag;
 		
 	}
 
 	@Override
-	public void createFlights(List<FlightDTO> flightDtoList) {
-		for(FlightDTO flightDto : flightDtoList){
-			createFlight(flightDto);
+	public boolean createFlights(List<FlightDTO> flightDtoList) {
+		boolean successFlag = false;
+		int success = flightDAO.createFlights(flightDtoList);
+		if(success == 1){
+			successFlag = true;
 		}
-		
+		return successFlag;
 	}
-
+		
 	
 }

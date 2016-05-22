@@ -29,8 +29,17 @@ public class FlightDAO implements ApplicationListener<ContextRefreshedEvent>{
 		return successFlag;
 	}
 	
-	public void deleteAll(){
-		jdbcTemplate.update("DELETE FROM FLIGHTS");
+	public int createFlights(List<FlightDTO> flightList){
+		int successFlag = 0;
+		for(FlightDTO flight: flightList){
+			successFlag = jdbcTemplate.update("INSERT INTO flights(prefix,number) values(?,?)",flight.getFlightPrefix(), flight.getFlightNumber());
+		}
+		return successFlag;
+	}
+	
+	public int deleteAll(){
+		int successFlag = jdbcTemplate.update("DELETE FROM FLIGHTS");
+		return successFlag;
 	}
 	
 	private static final RowMapper<FlightDTO> flightMapper = new RowMapper<FlightDTO>() {

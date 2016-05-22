@@ -36,6 +36,7 @@ public class FlightServiceTest {
 		flightList = new ArrayList<FlightDTO>();
 		flightDTO = new FlightDTO("EK", "0522");
 		flightList.add(flightDTO);
+		flightList.add(new FlightDTO("EK", "0523"));
 	}
 	
 	@Test
@@ -58,5 +59,36 @@ public class FlightServiceTest {
 		boolean successFlag = flightService.createFlight(flightDTO);
 		assertFalse(successFlag);
 	}
+	
+	@Test
+	public void testDeleteFlightsSuccess(){
+		when(flightDAO.deleteAll()).thenReturn(1);
+		boolean successFlag = flightService.deleteAll();
+		assertTrue(successFlag);
+	}
+	
+	@Test
+	public void testDeleteFlightFailure(){
+		when(flightDAO.deleteAll()).thenReturn(0);
+		boolean successFlag = flightService.deleteAll();
+		assertFalse(successFlag);
+	}
+	
+	@Test
+	public void testCreateFlightsSuccess(){
+		
+		when(flightDAO.createFlights(flightList)).thenReturn(1);
+		boolean successFlag = flightService.createFlights(flightList);
+		assertTrue(successFlag);
+	}
+	
+	@Test
+	public void testCreateFlightsFailure(){
+		
+		when(flightDAO.createFlights(flightList)).thenReturn(0);
+		boolean successFlag = flightService.createFlights(flightList);
+		assertFalse(successFlag);
+	}
+	
 
 }

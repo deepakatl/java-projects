@@ -8,6 +8,6 @@ public interface FlightService {
 
 	public List<FlightDTO> getFlightInfo();
 	public boolean createFlight(FlightDTO flightDto);
-	public void createFlights(List<FlightDTO> flightDtoList);
-	public void deleteAll();
+	public boolean createFlights(List<FlightDTO> flightDtoList);
+	public boolean deleteAll();
 }

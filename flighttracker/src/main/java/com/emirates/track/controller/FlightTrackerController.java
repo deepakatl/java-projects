@@ -26,20 +26,23 @@ public class FlightTrackerController {
 	}
 	
 	@RequestMapping("/createFlight")
-	public void createFlight(@RequestBody FlightDTO flight){
+	public boolean createFlight(@RequestBody FlightDTO flight){
 		
-		flightService.createFlight(flight);
+		boolean successFlag = flightService.createFlight(flight);
+		return successFlag;
 	}
 	
 	@RequestMapping("/createFlightList")
-	public void createFlight(@RequestBody List<FlightDTO> flightList){
+	public boolean createFlight(@RequestBody List<FlightDTO> flightList){
 		
-		flightService.createFlights(flightList);
+		boolean successFlag = flightService.createFlights(flightList);
+		return successFlag;
 	}
 	
 	@RequestMapping("/deleteAll")
-	public void deleteAll(){
-		flightService.deleteAll();
+	public boolean deleteAll(){
+		boolean successFlag = flightService.deleteAll();
+		return successFlag;
 	}
 	
 	
