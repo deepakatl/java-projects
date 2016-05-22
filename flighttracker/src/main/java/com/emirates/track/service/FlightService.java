@@ -7,7 +7,7 @@ import com.emirates.track.dto.FlightDTO;
 public interface FlightService {
 
 	public List<FlightDTO> getFlightInfo();
-	public void createFlight(FlightDTO flightDto);
+	public boolean createFlight(FlightDTO flightDto);
 	public void createFlights(List<FlightDTO> flightDtoList);
 	public void deleteAll();
 }

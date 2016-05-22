@@ -22,13 +22,17 @@ public class FlightServiceImpl implements FlightService{
 		List<FlightDTO> flightList = null;
 		if(flightDAO != null){
 			flightList = flightDAO.getFlights();
-			System.out.println(flightList);
 		}
 		return flightList;
 	}
 	
-	public void createFlight(FlightDTO flightDto){
-		flightDAO.createFlight(flightDto);
+	public boolean createFlight(FlightDTO flightDto){
+		boolean successFlag = false;
+		int success = flightDAO.createFlight(flightDto);
+		if(success == 1){
+			successFlag = true;
+		}
+		return successFlag;
 	}
 
 	@Override

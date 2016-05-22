@@ -24,8 +24,9 @@ public class FlightDAO implements ApplicationListener<ContextRefreshedEvent>{
 		return jdbcTemplate.query("SELECT * FROM flights ", flightMapper);
 	}
 	
-	public void createFlight(FlightDTO flight){
-		jdbcTemplate.update("INSERT INTO flights(prefix,number) values(?,?)",flight.getFlightPrefix(), flight.getFlightNumber());
+	public int createFlight(FlightDTO flight){
+		int successFlag = jdbcTemplate.update("INSERT INTO flights(prefix,number) values(?,?)",flight.getFlightPrefix(), flight.getFlightNumber());
+		return successFlag;
 	}
 	
 	public void deleteAll(){
